@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="APAE Games — Portal de jogos educativos para todos! Acesse diversos jogos de sílabas e aprendizado em um só lugar." />
+  <meta name="theme-color" content="#0f0c29" />
+  <meta name="author" content="APAE" />
+  <meta property="og:title" content="APAE Games — Jogos Educativos" />
+  <meta property="og:description" content="Portal com jogos educativos de sílabas e aprendizado. Jogue direto no navegador!" />
+  <meta property="og:type" content="website" />
+  <title>APAE Games — Jogos Educativos</title>
+
+  <!-- Favicon (emoji-based SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-animated" aria-hidden="true"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles-container" id="particles" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo-container">
+      <h1 class="logo-title">
+        <span class="logo-emoji">🎮</span> APAE Games <span class="logo-emoji">🌟</span>
+      </h1>
+      <p class="logo-subtitle">Jogos educativos para todos!</p>
+    </div>
+
+    <!-- Search -->
+    <div class="search-container">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Buscar jogos..."
+        aria-label="Buscar jogos"
+        autocomplete="off"
+      />
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
+
+    <!-- Counter -->
+    <div class="game-counter" id="game-counter" aria-live="polite"></div>
+  </header>
+
+  <!-- ===== GAMES GRID ===== -->
+  <main class="games-section">
+    <div class="games-grid" id="games-grid" role="list"></div>
+
+    <!-- No results message -->
+    <div class="no-results" id="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p class="no-results-text">Nenhum jogo encontrado</p>
+    </div>
+  </main>
+
+  <!-- ===== GAME OVERLAY (iframe) ===== -->
+  <div class="game-overlay" id="game-overlay" role="dialog" aria-label="Tela do jogo">
+    <!-- Top bar -->
+    <div class="game-topbar">
+      <button class="back-btn" id="back-btn" aria-label="Voltar para a lista de jogos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Voltar</span>
+      </button>
+
+      <span class="game-topbar-title" id="game-topbar-title"></span>
+
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <span class="topbar-logo">APAE Games</span>
+        <button class="fullscreen-btn" id="fullscreen-btn" aria-label="Tela cheia" title="Tela cheia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Iframe -->
+    <div class="game-iframe-container">
+      <!-- Loading Indicator -->
+      <div class="game-loading" id="game-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Carregando jogo...</p>
+      </div>
+
+      <iframe
+        id="game-iframe"
+        class="game-iframe"
+        title="Jogo"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
+        allow="autoplay; fullscreen"
+        src="about:blank"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>APAE Games &copy; 2025 — Feito com 💜 para a educação inclusiva</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
