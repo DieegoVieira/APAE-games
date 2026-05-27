@@ -101,6 +101,13 @@ const GAMES = [
     image: 'imagens/indicabla.png',
     url: 'https://gustavkeller-23.github.io/DiscoGame/',
     emoji: '🪩'
+  },
+  {
+    id: 15,
+    name: 'Penalti Educativo',
+    image: 'imagens/penalti-educativo.png',
+    url: 'https://ozeiasmoreira.github.io/Penalti_educativo/',
+    emoji: '⚽'
   }
 ];
 
